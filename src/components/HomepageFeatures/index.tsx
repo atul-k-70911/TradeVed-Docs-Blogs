@@ -1,60 +1,69 @@
 import type {ReactNode} from 'react';
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
+import Feature, {type FeatureItem} from './Feature';
 import styles from './styles.module.css';
-
-type FeatureItem = {
-  title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: ReactNode;
-};
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Scanner',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Screen markets using filters and conditions to quickly spot potential trade setups and
+        opportunities.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Strategy Visualizer & Backtesting',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Build and visualize strategies, then backtest them on historical data to understand
+        performance before taking them live.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'No‑Code Algo Builder',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Create systematic strategies without writing code—iterate, refine, and structure your
+        rules in a guided workflow.
+      </>
+    ),
+  },
+  {
+    title: 'Paper Trading & Journal',
+    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    description: (
+      <>
+        Practice with paper trading and track performance using a trading journal to review,
+        learn, and improve consistency over time.
+      </>
+    ),
+  },
+  {
+    title: 'Copy Trading',
+    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    description: (
+      <>
+        Follow and copy trades from other traders to learn from active strategies and
+        participate with less manual effort.
+      </>
+    ),
+  },
+  {
+    title: 'Learning: Quests & Quizzes',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        Learn systematically with interactive Q&amp;A style quests and quizzes designed to
+        strengthen options and strategy concepts.
       </>
     ),
   },
 ];
-
-function Feature({title, Svg, description}: FeatureItem) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
 
 export default function HomepageFeatures(): ReactNode {
   return (
