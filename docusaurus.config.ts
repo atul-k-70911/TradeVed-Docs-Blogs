@@ -8,7 +8,7 @@ const config: Config = {
   title: 'TradeVed',
   tagline: 'Streamlined learning to algo trading for retail traders',
   favicon: 'img/favicon.ico',
-ggbg
+
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
