@@ -6,6 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  /* ---------- Infima theme colors (keep your current setup) ---------- */
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
@@ -13,12 +14,32 @@
   --ifm-color-primary-light: #33925d;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
+
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* ---------- Docs Sidebar styling (Light) ---------- */
+  --doc-sidebar-width: 320px;
+  --doc-sidebar-hidden-width: 28px;
+
+  --ifm-menu-link-padding-vertical: 0.55rem;
+  --ifm-menu-link-padding-horizontal: 0.85rem;
+
+  /* Accent + sidebar palette */
+  --tv-accent: #b7ff4a;
+
+  --tv-sidebar-bg: #f7f8fa;
+  --tv-sidebar-border: rgba(0, 0, 0, 0.08);
+  --tv-item-hover: rgba(183, 255, 74, 0.18);
+  --tv-item-active: rgba(183, 255, 74, 0.28);
+
+  --tv-text: rgba(10, 15, 20, 0.92);
+  --tv-text-muted: rgba(10, 15, 20, 0.72);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
+  /* ---------- Infima theme colors (your current setup) ---------- */
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -26,5 +47,95 @@
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* ---------- Docs Sidebar styling (Dark) ---------- */
+  --tv-sidebar-bg: #070b10;
+  --tv-sidebar-border: rgba(255, 255, 255, 0.08);
+  --tv-item-hover: rgba(183, 255, 74, 0.10);
+  --tv-item-active: rgba(183, 255, 74, 0.16);
+
+  --tv-text: rgba(255, 255, 255, 0.9);
+  --tv-text-muted: rgba(255, 255, 255, 0.72);
+}
+
+/* ===================== Docs Sidebar styles ===================== */
+
+/* Sidebar container */
+.theme-doc-sidebar-container {
+  background: var(--tv-sidebar-bg);
+  border-right: 1px solid var(--tv-sidebar-border);
+}
+
+/* Menu padding */
+.theme-doc-sidebar-menu {
+  padding: 0.75rem;
+}
+
+/* Base menu link style */
+.menu__link {
+  color: var(--tv-text);
+  border-radius: 12px;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+/* Hover */
+.menu__link:hover {
+  background: var(--tv-item-hover);
+}
+
+/* Active/current page */
+.menu__link--active {
+  background: var(--tv-item-active);
+  color: var(--tv-accent);
+  font-weight: 700;
+}
+
+/* Category label row */
+.menu__list-item-collapsible > .menu__link {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: var(--tv-text);
+}
+
+/* Nested items indentation */
+.menu__list .menu__list {
+  margin-left: 0.25rem;
+  padding-left: 0.35rem;
+  border-left: 1px solid var(--tv-sidebar-border);
+}
+
+/* Nested items slightly muted */
+.menu__list .menu__list .menu__link {
+  font-size: 0.95rem;
+  color: var(--tv-text-muted);
+}
+
+/* Nested active link */
+.menu__list .menu__list .menu__link--active {
+  color: var(--tv-accent);
+}
+
+/* Focus styling */
+.menu__link:focus-visible {
+  outline: 2px solid rgba(183, 255, 74, 0.55);
+  outline-offset: 2px;
+}
+
+/* Sidebar scrollbar (Chrome/Edge) */
+.theme-doc-sidebar-menu::-webkit-scrollbar {
+  width: 10px;
+}
+.theme-doc-sidebar-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+.theme-doc-sidebar-menu::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+}
+html[data-theme='dark'] .theme-doc-sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+}
+html:not([data-theme='dark']) .theme-doc-sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
 }
